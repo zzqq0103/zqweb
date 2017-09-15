@@ -9,58 +9,27 @@
 <head>
     <!-- 页面编码模式 -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0" />
     <!--safari私有meta标签，它表示：允许全屏模式浏览-->
     <meta content="yes" name="apple-mobile-web-app-capable" />
     <!--iphone的私有标签，它指定的iphone中safari顶端的状态条的样式-->
     <meta content="black" name="apple-mobile-web-app-status-bar-style" />
     <title>中秋节快乐</title>
+   
     <link href="<%=bp%>/css/index.css" rel="stylesheet">
-    <link href="<%=bp%>/css/common.css" rel="stylesheet">
     <link href="<%=bp%>/css/style.css" rel="stylesheet">
-    <link href="<%=bp%>/css/button.css" rel="stylesheet">
+    <link rel="stylesheet" href="<%=bp%>/css/jquery-weui.css">
 </head>
 
 <body>
     <!-- 背景 div-->
-    <div class="container" id="container-bg" style="background-image: url(<%=bp%>/img/back.png)">
-
-        <div id="lantern" style="background-image: url(<%=bp%>/img/latern.png)">
-
-        </div>
-
-        <div class="box">
-            <div id="dialogBg"></div>
-            <div id="dialog" class="animated">
-                <img class="dialogIco" width="50" height="50" src="<%=bp%>/img/ico.png" alt="" />
-                <div class="dialogTop">
-                    <p style="font-size: 13px;text-align: center;margin-top: 15px;color:red;">恭喜您！您中奖啦！<br/>请您填写您的姓名和手机号码<br/>以便我们稍后联系您。</p>
-                    <a href="javascript:;" class="claseDialogBtn">关闭</a>
-                </div>
-                <form action="" method="post" id="editForm">
-                    <ul class="editInfos">
-                        <li><label><font color="#ff0000">* </font>姓名：<input type="text" name="" required value="" class="ipt" id="username"/></label></li>
-                        <li><label><font color="#ff0000">* </font>手机：<input type="text" name="" required value="" class="ipt" id="phone"/></label></li>
-                        <li id="tijiao">
-                            <input id="info_submit" type="button" value="提交号码" class="submitBtn"/>
-                        </li>
-                    </ul>
-                </form>
-            </div>
-        </div>
-
+    <div class="container" id="container-bg">
         <!-- audio -->
         <div class="rotate audio">
             <audio src="<%=bp%>/audio/bg-music.mp3" id="media" autoplay loop preload></audio>
         </div>
 
-        <!--游戏介绍-->
-        <div class="intro">
-            <img src="<%=bp%>/img/intro.svg"/>
-            <span>游戏介绍</span>
-        </div>
-
-        <div id="tab-box" style="display:none;z-index:10;">
+        <div id="tab-box" style="display:none;">
             <div class="tabs">
                 <input type="radio" id="tab1" name="tab-control" checked>
                 <input type="radio" id="tab2" name="tab-control">
@@ -71,11 +40,13 @@
                             <span>游戏介绍</span>
                         </label>
                     </li>
+		     <!--
                     <li title="Delivery Contents">
                         <label for="tab2" role="button">
                             <span>我的奖品</span>
                         </label>
                     </li>
+                    -->
                 </ul>
                 <div class="content">
                     <section>
@@ -106,26 +77,20 @@
             </div>
         </div>
 
-        <div id="tree">
-            <img id="tree_image" src="<%=bp%>/img/tree-1.png"/>
+        <!--游戏介绍-->
+        <div class="intro">
+            <img src="<%=bp%>/img/intro.svg"/>
         </div>
 
-        <div id="energe">鸿运值<br/>&nbsp;&nbsp;&nbsp;<span id="energy_num"></span></div>
-        <div id="jqmeter-container"></div>
-
-        <a href="javascript:void(0)" class="button button-caution button-box button-raised button-giant button-longshadow" id="btn-qiandao">立即签到</a>
-        <button class="button button-caution button-box button-raised button-giant button-longshadow">
-        </button>
-        <a href="javascript:void(0)" class="myButton" id="btn-query">中奖查询</a>
+        <a href="" class="myButton" id="btn">立即开始</a>
 
     </div>
 
     <script src="<%=bp%>/js/jquery-2.1.4.min.js"></script>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="//cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"></script>
     <script src="<%=bp%>/js/Utils.js"></script>
-    <script src="<%=bp%>/js/main.js"></script>
-    <script src="<%=bp%>/js/jqmeter.min.js"></script>
-    <script src="<%=bp%>/js/js.js"></script>
+    <script src="<%=bp%>/js/index.js"></script>
 
     <script type="text/javascript">
         // 音乐播放
@@ -158,7 +123,6 @@
         }
         autoPlayMusic();
     </script>
-
 </body>
 
 </html>

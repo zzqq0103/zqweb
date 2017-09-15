@@ -18,15 +18,21 @@
     <link href="<%=bp%>/css/index.css" rel="stylesheet">
     <link href="<%=bp%>/css/common.css" rel="stylesheet">
     <link href="<%=bp%>/css/style.css" rel="stylesheet">
-    <link href="<%=bp%>/css/button.css" rel="stylesheet">
 </head>
 
 <body>
     <!-- 背景 div-->
-    <div class="container" id="container-bg" style="background-image: url(<%=bp%>/img/back.png)">
+    <div class="container" id="container-bg" style="background-image: url(<%=bp%>/img/back-inner.png)">
 
-        <div id="lantern" style="background-image: url(<%=bp%>/img/latern.png)">
+         <div class="lantern" id="lantern1" style="background-image: url(<%=bp%>/img/lantern1-1.png)">
+        </div>
+        <div class="lantern" id="lantern2" style="background-image: url(<%=bp%>/img/lantern2-1.png)">
 
+        </div>
+         <div class="lantern" id="lantern3" style="background-image: url(<%=bp%>/img/lantern3-1.png)">
+
+        </div>
+         <div class="lantern" id="lantern4" style="background-image: url(<%=bp%>/img/lantern4-1.png)">
         </div>
 
         <div class="box">
@@ -57,7 +63,11 @@
         <!--游戏介绍-->
         <div class="intro">
             <img src="<%=bp%>/img/intro.svg"/>
-            <span>游戏介绍</span>
+            <!-- <span>游戏介绍</span> -->
+        </div>
+
+        <div class="share">
+                <img src="<%=bp%>/img/share.svg"/>
         </div>
 
         <div id="tab-box" style="display:none;z-index:10;">
@@ -71,11 +81,13 @@
                             <span>游戏介绍</span>
                         </label>
                     </li>
+                     <!--
                     <li title="Delivery Contents">
                         <label for="tab2" role="button">
                             <span>我的奖品</span>
                         </label>
                     </li>
+                    -->
                 </ul>
                 <div class="content">
                     <section>
@@ -110,12 +122,10 @@
             <img id="tree_image" src="<%=bp%>/img/tree-1.png"/>
         </div>
 
-        <div id="energe">鸿运值<br/>&nbsp;&nbsp;&nbsp;<span id="energy_num"></span></div>
+        <div id="energe">鸿运值<br/><span id="energy_num"></span></div>
         <div id="jqmeter-container"></div>
 
-        <a href="javascript:void(0)" class="button button-caution button-box button-raised button-giant button-longshadow" id="btn-qiandao">立即签到</a>
-        <button class="button button-caution button-box button-raised button-giant button-longshadow">
-        </button>
+        <a href="javascript:void(0)" class="myButton" id="btn-qiandao">立即签到</a>
         <a href="javascript:void(0)" class="myButton" id="btn-query">中奖查询</a>
 
     </div>

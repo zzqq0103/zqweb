@@ -1,4 +1,5 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%
 	String bp = request.getScheme() + "://"
 			+ request.getServerName() + ":" + request.getServerPort()
@@ -9,13 +10,12 @@
 <head>
     <!-- 页面编码模式 -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
     <!--safari私有meta标签，它表示：允许全屏模式浏览-->
     <meta content="yes" name="apple-mobile-web-app-capable" />
     <!--iphone的私有标签，它指定的iphone中safari顶端的状态条的样式-->
     <meta content="black" name="apple-mobile-web-app-status-bar-style" />
     <title>中秋节快乐</title>
-   
     <link href="<%=bp%>/css/index.css" rel="stylesheet">
     <link href="<%=bp%>/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="<%=bp%>/css/jquery-weui.css">
@@ -24,6 +24,15 @@
 <body>
     <!-- 背景 div-->
     <div class="container" id="container-bg">
+
+        <div class="content">
+            <div class="image-avatar">
+                <img id="friend_img"/>
+            </div>
+            <p class="name" id="invite_name"></p>
+            <!--<p class="info-invite"></p>-->
+        </div>
+
         <!-- audio -->
         <div class="rotate audio">
             <audio src="<%=bp%>/audio/bg-music.mp3" id="media" autoplay loop preload></audio>
@@ -40,7 +49,7 @@
                             <span>游戏介绍</span>
                         </label>
                     </li>
-                    <!--
+                     <!--
                     <li title="Delivery Contents">
                         <label for="tab2" role="button">
                             <span>我的奖品</span>
@@ -77,53 +86,33 @@
             </div>
         </div>
 
+
+        <div id="tree">
+
+        </div>
+
+        <div id="info-div">
+
+        </div>
+
+
         <!--游戏介绍-->
         <div class="intro">
             <img src="<%=bp%>/img/intro.svg"/>
-            <span>游戏介绍</span>
         </div>
 
-        <a href="javascript:void(0)" class="button button-caution button-box button-raised button-giant button-longshadow" id="btn-qiandao">立即开始</a>
+        <a class="myButton" id="btn">为他祈福</a>
 
     </div>
 
     <script src="<%=bp%>/js/jquery-2.1.4.min.js"></script>
-    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
-    <script src="//cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"></script>
     <script src="<%=bp%>/js/Utils.js"></script>
-    <script src="<%=bp%>/js/index.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="<%=bp%>/js/jquery-weui.js"></script>
+    <script src="<%=bp%>/js/share.js"></script>
+    <script src="<%=bp%>/js/js.js"></script>
 
-    <script type="text/javascript">
-        // 音乐播放
-        function autoPlayMusic() {
-            // 自动播放音乐效果，解决浏览器或者APP自动播放问题
-            function musicInBrowserHandler() {
-                musicPlay(true);
-                document.body.removeEventListener('touchstart', musicInBrowserHandler);
-            }
-            document.body.addEventListener('touchstart', musicInBrowserHandler);
 
-            // 自动播放音乐效果，解决微信自动播放问题
-            function musicInWeixinHandler() {
-                musicPlay(true);
-                document.addEventListener("WeixinJSBridgeReady", function () {
-                    musicPlay(true);
-                }, false);
-                document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
-            }
-            document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
-        }
-        function musicPlay(isPlay) {
-            var audio = document.getElementById('media');
-            if (isPlay && audio.paused) {
-                audio.play();
-            }
-            if (!isPlay && !audio.paused) {
-                audio.pause();
-            }
-        }
-        autoPlayMusic();
-    </script>
 </body>
 
 </html>
